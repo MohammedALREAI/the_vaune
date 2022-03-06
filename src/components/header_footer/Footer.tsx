@@ -1,16 +1,17 @@
 import React from "react";
-import Fade from "react-reveal/Fade";
+import Fade from "react-reveal";
+import { FooterWrapper } from "./style";
 
 const Footer = () => {
   return (
-    <footer className="bck_red">
+    <FooterWrapper>
       <Fade delay={500}>
-        <div className="font_righteous footer_logo_venue">The Venue</div>
+        <div >The Venue</div>
         <div className="footer_copyright">
           The venue 2018.All rights reserved.
         </div>
       </Fade>
-    </footer>
+    </FooterWrapper>
   );
 };
 

@@ -18,7 +18,7 @@ const TagLocation = styled.div`
   padding: 15px 20px;
   text-align: center;
 `;
-const loactionText = styled.div`
+export const LoactionText = styled.div`
   background: #2c2c2c;
   color: #ffffff;
   text-transform: uppercase;
@@ -41,7 +41,7 @@ const Location = () => {
         allowFullScreen></iframe>
 
       <TagLocation>
-        <loactionText>Location</loactionText>
+        <LoactionText>Location</LoactionText>
       </TagLocation>
     </WrapperLocation>
   );
