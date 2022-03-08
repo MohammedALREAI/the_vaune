@@ -1,13 +1,15 @@
 import React from "react";
 import Description from "./Description";
 import Discount from "./Discount";
+import { HighlightWrapper } from "./style";
 
 const Highlights = () => {
   return (
-    <div className="highlight_wrapper">
+    <HighlightWrapper>
+
       <Description />
       <Discount />
-    </div>
+    </HighlightWrapper>
   );
 };
 

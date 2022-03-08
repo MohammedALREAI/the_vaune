@@ -4,13 +4,12 @@ import { SliderItem } from "../widget/sliderItem";
 
 const Carrousel = () => {
   const settings = {
-    dots: true,
     fade: true,
     infinite: false,
     autoplay: false,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    dots: false,
+    arrows: false,
   };
 
   const images = [

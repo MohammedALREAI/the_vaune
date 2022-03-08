@@ -7,6 +7,7 @@ import IconButton from "@mui/material/IconButton";
 
 import SideDrawer from "./SideDrawer";
 import { AppBarCustom, HeaderLogo } from "./style";
+import { AppBar } from "@mui/material";
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -33,9 +34,14 @@ const Header = () => {
   };
 
   return (
-    <AppBarCustom
-      position="fixed"
-      headerShow={headerShow}>
+    <AppBar
+      sx={{
+        bgcolor: "#E5E5E5",
+        height: "5.2rem",
+      }}
+      position="static"
+    // headerShow={headerShow}
+    >
       <Toolbar>
         <HeaderLogo>
           <div>The Venue</div>
@@ -44,17 +50,16 @@ const Header = () => {
 
         <IconButton
           aria-label="Menu"
-          color="inherit"
           onClick={() => toggleDrawer(true)}>
           <MenuIcon />
         </IconButton>
 
         <SideDrawer
           open={drawerOpen}
-          onClose={(value:boolean) => toggleDrawer(value)}
+          onClose={(value: boolean) => toggleDrawer(value)}
         />
       </Toolbar>
-    </AppBarCustom>
+    </AppBar>
   );
 };
 

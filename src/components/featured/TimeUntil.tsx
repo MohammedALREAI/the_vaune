@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import { Slide } from "react-reveal";
 import { getTime } from "../../utils/foramtDate";
+import { CountdownBottom, CountdownItem, CountdownTag, CountdownTime, CountdownWrapper } from "./style";
 
 class TimeUntil extends PureComponent {
     state = {
@@ -37,47 +38,48 @@ class TimeUntil extends PureComponent {
     render() {
         return (
             <Slide left delay={1000}>
-                <div className="countdown_wrapper">
-                    <div className="countdown_top">
+                <CountdownWrapper>
+                    <div>
                         Event starts in
                     </div>
-                    <div className="countdown_bottom">
-                        <div className="countdown_item">
-                            <div className="countdown_time">
+                    <CountdownBottom>
+                        <CountdownItem>
+                            <CountdownTime>
                                 {this.state.days}
-                            </div>
-                            <div className="countdown_tag">
+                            </CountdownTime>
+                            <CountdownTag>
                                 Days
-                            </div>
-                        </div>
-                        <div className="countdown_item">
-                            <div className="countdown_time">
+                            </CountdownTag>
+                        </CountdownItem>
+                        <CountdownItem>
+                            <CountdownTime>
                                 {this.state.hours}
-                            </div>
-                            <div className="countdown_tag">
-                                Hs
-                            </div>
-                        </div>
-                        <div className="countdown_item">
-                            <div className="countdown_time">
+                            </CountdownTime>
+                            <CountdownTag>
+                                Hr
+                            </CountdownTag>
+                        </CountdownItem>
+                        <CountdownItem>
+                            <CountdownTime>
                                 {this.state.minutes}
-                            </div>
-                            <div className="countdown_tag">
+                            </CountdownTime>
+                            <CountdownTag>
                                 Min
-                            </div>
-                        </div>
-                        <div className="countdown_item">
-                            <div className="countdown_time">
+                            </CountdownTag>
+                        </CountdownItem>
+                        <CountdownItem>
+                            <CountdownTime>
                                 {this.state.seconds}
-                            </div>
-                            <div className="countdown_tag">
+                            </CountdownTime>
+                            <CountdownTag>
                                 Sec
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            </CountdownTag>
+                        </CountdownItem>
 
-            </Slide>
+                    </CountdownBottom>
+                </CountdownWrapper>
+
+            </Slide >
 
         );
     }

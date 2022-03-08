@@ -6,12 +6,12 @@ const Footer = () => {
   return (
     <FooterWrapper>
       <Fade delay={500}>
-        <div >The Venue</div>
-        <div className="footer_copyright">
-          The venue 2018.All rights reserved.
-        </div>
+        <h3 >The Venue</h3>
+        <p className="footer_copyright">
+          The venue  &nbsp; 2020 &nbsp; All &nbsp; &copy; rights reserved.
+        </p>
       </Fade>
-    </FooterWrapper>
+    </FooterWrapper >
   );
 };
 

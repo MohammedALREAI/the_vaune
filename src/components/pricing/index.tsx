@@ -2,21 +2,21 @@ import React, { Component } from "react";
 import MyButton from "../utils/MyButton";
 import Zoom from "react-reveal";
 import { dataPrice } from "../utils/dammy";
-import { SubWrapperPrice, WrapperPrice } from "./style";
+import { PricingDescription, PricingItem, PricingTitle, PricingWrapper, SubWrapperPrice, WrapperPrice } from "./style";
 
-class Pricing extends Component {
-    showBoxes = () => {
-         return dataPrice.prices.map((box, i) => (
+const Pricing = () => {
+    const showBoxes = () => {
+        return dataPrice.prices.map((box, i) => (
             <Zoom delay={dataPrice.delay[i]} key={i}>
-                <div className="pricing_item">
+                <PricingItem>
                     <div className="pricing_inner_wrapper">
-                        <div className="pricing_title">
+                        <PricingTitle>
                             <span>${dataPrice.prices[i]}</span>
                             <span>{dataPrice.positions[i]}</span>
-                        </div>
-                        <div className="pricing_description">
+                        </PricingTitle>
+                        <PricingDescription>
                             {dataPrice.desc[i]}
-                        </div>
+                        </PricingDescription>
                         <div className="pricing_buttons">
                             <MyButton
                                 text="Purchase"
@@ -26,25 +26,23 @@ class Pricing extends Component {
                             />
                         </div>
                     </div>
-                </div>
-            </Zoom>
+                </PricingItem>
+            </Zoom >
         ));
-}
+    };
 
-    render() {
-        return (
-            <WrapperPrice>
-                <SubWrapperPrice>
-                    {/* <h2>Pricing</h2> */}
+    return (
+        <WrapperPrice>
+            <SubWrapperPrice>
+                {/* <h2>Pricing</h2> */}
 
-                    <div className="pricing_wrapper">
-                        {this.showBoxes()}
-                    </div>
+                <PricingWrapper>
+                    {showBoxes()}
+                </PricingWrapper>
 
-                </SubWrapperPrice>
-            </WrapperPrice>
-        );
-    }
-}
+            </SubWrapperPrice>
+        </WrapperPrice>
+    );
+};
 
 export default Pricing;
